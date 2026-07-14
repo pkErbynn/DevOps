@@ -25,3 +25,32 @@
             
 - Patterns across all build tools
     ![alt text](image.png)
+
+
+## Build Tools and Docker
+- W/ Docker, no need to build and move different artifact types - Jar, dll, zip
+    - just one artifact type - ie Docker Image
+- No need for several repositories (NPM, Nuget, Maven) for each artifact type
+    - just one for the Docker image - ie Docker Hub
+- No need to install dependencies on prod server
+    - install all depends inside the Docker Image
+        - using Dockerfile, all app dependencies are copied into the image file system, then installed with “npm install” inside the docker image that will be generated
+            
+            ![alt text](image-2.png)
+            
+        - using Dockerfile, the already built app (for static langs like java, c#) is copied inside the Docker image file system…so not dependecy installaiton is required here
+            
+            ![alt text](image-3.png)
+            
+- In short,
+    - Docker makes it easier to consolidate everything
+        
+        ![alt text](image-4.png)
+        
+    - Build Docker Image ⇒ Push to Repo ⇒ Pull and Run on Server
+    - As DevOps Engr, **you don’t run the application locally** like the dev, so you need to configure a build automation tool, called CI/CD Pipeline to get the final artifact on dev/prod server
+        - Build automation steps include:
+            1. install dependencies
+            2. run tests
+            3. build(for java)/bundle(webpack for js) app
+            4. push to repo
