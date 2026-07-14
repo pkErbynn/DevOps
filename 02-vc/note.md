@@ -1,0 +1,39 @@
+## Git for devs
+
+- Connect with remote git using ssh key
+- Excluding an existing file from git tracking
+    - update .gitignore file
+    - remote from git cache
+        - `git rm -r —cache <node_modules>`
+- hide unfinished changes
+    - git stash & git stash pop
+- back into specific history
+    - `git checkout <hash>`
+    - …then `git checkout <back-to-branch>`
+- undoing current commit
+    - undo/revert and remove old commit
+        - …recommended to be done on a feature solo branch/when no commit is in master
+        - …will affect team members if team already has the commit
+        - undo and remove the current commit and changes from staging
+            - `git reset —hard HEAD~1 or HEAD~3`
+            - …then `git push -f`
+            - …if you lose your old commit and you can find it again using `git reflog`
+        - undo and remove the commit, but changes remain in staging
+            - `git reset —soft  HEAD~1`
+        - undo by resetting the head to a particular commit…and wiping all previous commits
+            - `git reset —soft <hash>`
+    - revert/undo commit without modifying existing commit but creates a new commit for the revert/undo…
+        - …recommended to be done when changes has gone to main/master (and the team has it) and changes on that commit hash need to be removed….
+        - `git revert <hash>`
+- adding more changes to the current commits, without creating new commit
+    - `git commit —amend —no-edit`
+
+
+### DevOps use cases
+- Infra as Code - IaC:
+    - eg, configuring K8s config yaml files
+    - Teraform and Ansifi
+    - Bash and Python scripts
+- CI/CD pipelines and build automation
+    - need git commit integration for build automation with git repo
+    - checkout code, test, and build the application
