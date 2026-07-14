@@ -87,5 +87,3 @@ Different redirects examples/use cases:
 - `cat sudo-commands.txt > sudo-rm-commands.txt` = Redirect output of 'sudo-commands.txt' file into 'sudo-rm-commands.txt' file
 - `history | grep rm > sudo-rm-commands.txt` ** = Redirect output of filtered history commands into existing 'sudo-rm-commands.txt' file. Note: Contents of file will be _overwritten_
 - `history | grep rm >> sudo-rm-commands.txt` ** = Redirect output of filtered history commands into existing 'sudo-rm-commands.txt' file. Note: Contents of file will be _appended_
-
-</details>
