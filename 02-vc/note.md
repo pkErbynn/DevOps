@@ -1,12 +1,19 @@
 ## Git for devs
+- Key Terms
+    - Git client
+    - Working directory....eg: we "make changes in working dir"
+    - Staging area....eg: we say "add to staging" *
+    - Local repo....eg: we say "commit to local repo" **
+    - Remote repo....eg: we say "push to remote repo"
 
 - Connect with remote git using ssh key
 - Excluding an existing file from git tracking
     - update .gitignore file
     - remote from git cache
         - `git rm -r —cache <node_modules>`
-- hide unfinished changes
-    - git stash & git stash pop
+- hide unfinished changes **
+    - `git stash` & 
+    - `git stash pop`
 - back into specific history
     - `git checkout <hash>`
     - …then `git checkout <back-to-branch>`
@@ -22,17 +29,23 @@
             - `git reset —soft  HEAD~1`
         - undo by resetting the head to a particular commit…and wiping all previous commits
             - `git reset —soft <hash>`
-    - revert/undo commit without modifying existing commit but creates a new commit for the revert/undo…
+    - revert/undo commit without modifying existing commit but creates a new commit for the revert/undo… ***
         - …recommended to be done when changes has gone to main/master (and the team has it) and changes on that commit hash need to be removed….
         - `git revert <hash>`
-- adding more changes to the current commits, without creating new commit
+- adding more changes to the current commits, without creating new commit *
     - `git commit —amend —no-edit`
-
+- Merge and Rebase
+    - Merge: 
+        - `$ git pull`
+        - `$ git merge master`
+    - Rebase: 
+        - `$ git pull -r`
 
 ### DevOps use cases
+---
 - Infra as Code - IaC:
     - eg, configuring K8s config yaml files
-    - Teraform and Ansifi
+    - Teraform and Ansible config files
     - Bash and Python scripts
 - CI/CD pipelines and build automation
     - need git commit integration for build automation with git repo
