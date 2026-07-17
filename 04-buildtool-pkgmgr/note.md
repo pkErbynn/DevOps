@@ -1,9 +1,14 @@
-## Build Tools & Package Managers
+# Build Tools & Package Managers
 - For managing app dependencies…downloads the dependencies for the app from its repository before it builds
 - For building, packaging, and publishing artifacts
+- Package Mgr => for installing software tools/libs
+- Build Tools => for compiling app into one single-file
+    - Some tools can do both, others does only one
 - Examples
     1. Gradle/Maven for Java….package managers and build tools
     2. NPM/Yarn for JS… package managers and not build tools
+    3. Homebrew for Mac...pkg mgr for installing other software apps on MacOS, and not a build tool
+        - eg: can use homebrew to install other softwares like git on mac
 - Dependency file
     - Package.json === Pom.xml === build.gradle
 - Packaging = building(compiling, compressing) the code into 1 single self-contained file called an Artifact
@@ -11,7 +16,7 @@
     - Stored so that it can be deployed multiple times in diff envs
 - What kind of file extension is in the artifact?
     - depends on the language used
-        - java ⇒ JAR, Java ARchive
+        - java ⇒ JAR, Java ARchive...
         - Js doesn’t have a special type file so ⇒ zip or tar file
 - For Js,
     - NPM can package the app w/ the package.json dependencies
