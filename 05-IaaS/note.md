@@ -27,7 +27,7 @@
         - `$ ps aux | grep "search term like java"`
     - Checking what port a process is listening to
         - you will see the port that you opened for th inbound request to the Springboot application
-        - `$ netstat -lpnt`
+        - `$ netstat -lpnt`...shows all process w/ active connections
             ![alt text](image.png)
 - Permmissions for Running applications into process
     - Don’t work with the root user or use the root user to start applications
@@ -39,13 +39,18 @@
         - switch to the new user ⇒ `$ su - <pkay>`
         - `#` indicates ⇒ Root User
         - `$` indicates ⇒ Standard Linux User
+        ![alt text](image-1.png)
     - ssh pub key config at the IaaS UI is for root user by default
+
+        - was able to ssh into remove because local PC's pub ssh key is shared/copied to Iaas Digital Ocean UI (ie root user in remote server)...so need to share the pub key w/ the {pkay} user as well in the remote server...so how do i copy and share w/ {pkay} user as well using the command line, not the ui
         
         !image.png
         
         - So now if a new user is created is used to ssh into the machine `pk@<the-vm-ip>`,  it can’t log in using SSH because the new user does not recognise the pub_key configuration done for the default root user using the UI for authentication…so ssh config needs to be done for `pk` user as well
-        - to configure, login to `root`, switch to `pk` then do the config
-            - copy pub ssh content from the local pc to `pk` user’s directory at *.ssh/authorized_keys file*
+        - to configure, do ssh login to `root` (since can't ssh into the `pk` user directly), then switch to `pk` then do the config
+            - copy pub ssh key content from the local pc to `pk` user’s home directory at *.ssh/authorized_keys file*
+                - create the new .ssh dir and authkeys file manually for the user
+                - the remote server's pkay user will now recognise ssh connection from the local pc with the help of its pub key share with it
             - now can ssh in the user ⇒ `ssh pk@162.243.217.204`
     - 
 
