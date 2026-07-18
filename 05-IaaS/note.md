@@ -35,7 +35,7 @@
         - create a separate user for each application, in order to give the user only the necessary perms to run the application
     - To create new user ⇒ `$ adduser <pkay>`
         - `pkay` user doesn’t have root access and can’t do what the root user can do (execute commands just like root user) unless given same level of perms,
-        - by adding `pkay` user to the `sudo` group ⇒ `$ usermod -aG sudo <pkay>`
+        - by adding `pkay` user to the `sudo` group ⇒ `$ usermod -aG sudo <pkay>` to have root-level permissions
         - switch to the new user ⇒ `$ su - <pkay>`
         - `#` indicates ⇒ Root User
         - `$` indicates ⇒ Standard Linux User
