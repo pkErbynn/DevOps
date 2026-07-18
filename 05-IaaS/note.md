@@ -28,6 +28,7 @@
     - Checking what port a process is listening to
         - you will see the port that you opened for th inbound request to the Springboot application
         - `$ netstat -lpnt`
+            ![alt text](image.png)
 - Permmissions for Running applications into process
     - Don’t work with the root user or use the root user to start applications
     - Best practice is to:

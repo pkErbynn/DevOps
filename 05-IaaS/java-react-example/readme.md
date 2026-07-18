@@ -2,6 +2,12 @@
 
 An example of how to use JS frontend to consume an endpoint written in Java.
 
+## Build
+```
+$ ./gradle clean 
+$ ./gradle build 
+```
+
 ## Frontend technologies
 
 - [React](https://facebook.github.io/react/) - UI Library
@@ -18,4 +24,5 @@ Related projects:
 
 Tip: [How to enable LiveReload in IntelliJ](http://stackoverflow.com/a/35895848/2284884)
 
-This project uses gradle version: 7.4
+<hr/>
+Original project can be found here: https://github.com/pmendelski/java-react-example 
